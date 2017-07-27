@@ -831,6 +831,7 @@
 						operate = 0;
 						break;
 					case 14:    // ALT
+						numshow = "a fake ALT";
 						break;
 					case 15:    // /
 						operations.CALcalculate();
@@ -844,6 +845,7 @@
 						HELP = 0;
 						break;
 					case 17:    //paint
+						numshow = "a fake PAINT";
 						break
 					case 18:    // ac
 						result = 0;
@@ -857,7 +859,7 @@
 						prenum = 0;
 						break;
 					default:   //number
-						if(numshow == "0" || operate == 1){ 
+						if(numshow == "0" || operate == 1 || numshow == "a fake ALT" || numshow == "a fake PAINT"){ 
 							numshow = [];
 						}
 						numshow += calButton[nowButton].text[0];
@@ -1068,6 +1070,9 @@
 	}
 
 	operations.CALcalculate = function() {
+		if(numshow == "a fake ALT" || numshow == "a fake PAINT"){
+			return;
+		}
 		numshow = Number(numshow);
     	if(quit != 1 && prenum != 0){ 
 			switch(calcul){ //判断要输入状态
@@ -1306,23 +1311,23 @@
 		ctx_u.textAlign = "right";
         ctx_u.fillStyle = "rgba(121,132,119,1)";
         if(level==4) {        
-            ctx_u.fillText(">>:It deletes a number ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 25);
+            ctx_u.fillText(">>:It deletes a number ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 30);
             ctx_u.fillText("from the result ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 5);
         }
         else if(level==8) {
-            ctx_u.fillText("1,0:It inserts a number ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 25);
+            ctx_u.fillText("1, 0:It inserts a number ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 30);
             ctx_u.fillText("into the result ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 5);
         }
         else if(level==13) {
-            ctx_u.fillText("2->1:Numbers in the result ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 25);
+            ctx_u.fillText("2->1:Numbers in the result ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 30);
             ctx_u.fillText("convert to new numbers ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 5);
         }
         else if(level==22) {
-            ctx_u.fillText("+/-:Change the sign of ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 25);
-            ctx_u.fillText("a number",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 5);
+            ctx_u.fillText("+/-:Change the sign ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 30);
+            ctx_u.fillText("of a number",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 5);
         }
         else if(level==26) {
-            ctx_u.fillText("Reverse:Now you can ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 25);
+            ctx_u.fillText("Reverse:Now you can ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 30);
             ctx_u.fillText("reverse the result ",inner_screenX + inner_screenW, inner_screenY + inner_screenH - 5);
         }                   
         ctx_u.textAlign ="left";
@@ -1372,13 +1377,21 @@
     	}
     	ctx_u.textAlign ="left";
     }
-	
+
 	canUApp.drawNum = function() {
-		ctx_u.font = "60px verdana";
-     	ctx_u.textAlign = "right";
-        ctx_u.fillStyle = "rgba(121, 132, 119, 1)";
-		for(var i = 0; i <= 7 && i < numshow.length; i++) {
-			ctx_u.fillText(numshow[numshow.length - i - 1], inner_screenX + inner_screenW - i * 35, inner_screenY + inner_screenH - 5);
+		if(numshow == "a fake PAINT" || numshow == "a fake ALT"){
+			ctx_u.font = "40px verdana";
+			ctx_u.textAlign = "right";
+			ctx_u.fillStyle = "rgba(121, 132, 119, 1)";
+			ctx_u.fillText(numshow, inner_screenX + inner_screenW, inner_screenY + inner_screenH - 5);
+		}
+		else{
+			ctx_u.font = "60px verdana";
+			ctx_u.textAlign = "right";
+			ctx_u.fillStyle = "rgba(121, 132, 119, 1)";
+			for(var i = 0; i <= 7 && i < numshow.length; i++) {
+				ctx_u.fillText(numshow[numshow.length - i - 1], inner_screenX + inner_screenW - i * 35, inner_screenY + inner_screenH - 5);
+			}
 		}
 		ctx_u.textAlign ="left";
  	}
