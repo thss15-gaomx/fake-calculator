@@ -1,0 +1,32 @@
+body,ul,p,h1,h2,h3,h4,dl,dd,form,input,textarea,select{
+    padding:0;
+    margin:0;
+    font-family:arial;
+    font-size:12px;
+}
+
+li{list-style:none;}
+img,input{border:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.page{
+    width: 400px;
+    height: 670px;
+    margin: 0px auto;
+    margin-top: 6px;
+}
+#main{
+    width: 400px;
+    height: 670px;
+    position: relative;
+}
+#canvas_up, #canvas_bottom {
+    width: 400px;
+    height: 670px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#canvas_up{z-index: 1;}
+#canvas_bottom{z-index: 0;}
