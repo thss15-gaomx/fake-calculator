@@ -19,6 +19,7 @@
 		cal.initStartButton();
 		canBApp.drawBackgorund();
 		canUApp.drawStartButton();
+        cal.initMusic();
 	}
 
 	cal.DoMouseD = function(e) {
@@ -235,7 +236,6 @@
 					HELP = 0;
 					next = 0;
 					cal.initMusicButton();
-					cal.initMusic();
 					canUApp.drawMusicButton();
 				}
 				else if(nowButton == 8){
