@@ -92,23 +92,23 @@ canUApp.drawGameButton = function(){
 }
 
 canUApp.drawMusicButton = function() {
-		musicButton11Ob.drawButton();
-		musicButton12Ob.drawButton();
-		musicButton13Ob.drawButton();
-		musicButton21Ob.drawButton();
-		musicButton22Ob.drawButton();
-		musicButton23Ob.drawButton();
-		musicButton31Ob.drawButton();
-		musicButton32Ob.drawButton();
-		musicButton33Ob.drawButton();
-		musicButton41Ob.drawButton();
-		musicButton42Ob.drawButton();
-		musicButton43Ob.drawButton();
-		musicButton51Ob.drawButton();
-		musicButton53Ob.drawButton();
-		canUApp.drawMusicResult();
-		canUApp.drawGoal();
-		canUApp.drawMoves();
+    musicButton11Ob.drawButton();
+    musicButton12Ob.drawButton();
+    musicButton13Ob.drawButton();
+    musicButton21Ob.drawButton();
+    musicButton22Ob.drawButton();
+    musicButton23Ob.drawButton();
+    musicButton31Ob.drawButton();
+    musicButton32Ob.drawButton();
+    musicButton33Ob.drawButton();
+    musicButton41Ob.drawButton();
+    musicButton42Ob.drawButton();
+    musicButton43Ob.drawButton();
+    musicButton51Ob.drawButton();
+    musicButton53Ob.drawButton();
+    canUApp.drawMusicResult();
+    canUApp.drawGoal();
+    canUApp.drawMoves();
 }
 
 canUApp.drawCalButton = function(){
