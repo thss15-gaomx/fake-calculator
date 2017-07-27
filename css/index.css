@@ -13,6 +13,7 @@ a:hover{text-decoration:underline;}
 .page{
     width: 400px;
     height: 670px;
+    position:relative;
     margin: 0px auto;
     margin-top: 6px;
 }
@@ -22,8 +23,6 @@ a:hover{text-decoration:underline;}
     position: relative;
 }
 #canvas_up, #canvas_bottom {
-    width: 400px;
-    height: 670px;
     position: absolute;
     left: 0;
     top: 0;
