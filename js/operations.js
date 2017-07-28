@@ -5,7 +5,9 @@ operations.Fakecalculate = function(nowButton){
 	var buttonText = gameButton[nowButton].text[level];
 	var len = buttonText.length;
 	if(len == 1){
-		result = 10 * result + parseInt(buttonText[0]);
+        result = String(result);
+        result += buttonText[0];
+        result = Number(result);
 	}
 	else if(len == 2){
 		if(buttonText[0] == ">"){
@@ -13,9 +15,6 @@ operations.Fakecalculate = function(nowButton){
 		}
 		else if(buttonText[0] == "^"){
 			result = result * result;
-		}
-		else if(buttonText[0] == "1"){
-			result = 10 * result + 10 + parseInt(buttonText[1]);
 		}
 		else{
 			var temp = parseInt(buttonText[1]);
@@ -32,6 +31,11 @@ operations.Fakecalculate = function(nowButton){
 				case "/":
 					result /= temp;
 					break;
+                default:
+                    result = String(result);
+                    result += (buttonText[0] + result += buttonText[1]);
+                    result = Number(result);
+                    break;
 			}
 		}
 	}
