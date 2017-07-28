@@ -33,7 +33,7 @@ operations.Fakecalculate = function(nowButton){
 					break;
                 default:
                     result = String(result);
-                    result += (buttonText[0] + result += buttonText[1]);
+                    result += (buttonText[0] + buttonText[1]);
                     result = Number(result);
                     break;
 			}
