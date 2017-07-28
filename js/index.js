@@ -28,7 +28,7 @@
                 e.preventDefault();
             }
         }
-        var nowButton = cal.getnowButton(e); 
+        nowButton = cal.getnowButton(e); 
         cal.mousedown(nowButton);
     }
     cal.DoMouseU = function(e) {
@@ -37,7 +37,6 @@
                 e.preventDefault();
             }
         }
-        var nowButton = cal.getnowButton(e);
         cal.mouseup(nowButton);
     }
     cal.DoTouchD = function(e) {
@@ -46,7 +45,7 @@
                 e.preventDefault();
             }
         }
-        var nowButton = cal.getNowTouchDown(e);
+        nowButton = cal.getNowTouchDown(e);
         cal.mousedown(nowButton);
     }
 
@@ -56,7 +55,6 @@
                 e.preventDefault();
             }
         }
-        var nowButton = cal.getNowTouchUp(e);
         cal.mouseup(nowButton);
 	}
 	

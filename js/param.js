@@ -3,6 +3,7 @@ var canvas_up, canvas_bottom;   //画布
 var ctx_u, ctx_b;   //两个画笔
 var canWid, canHei;  //画布的宽高
 var gameStatus = 0;  //游戏状态 0：开始界面 1：fake 2：24 3：music 4：calculator
+var nowButton;
 var loopID; //24点计时器id
 var level = 1, result = 0;      //和数据对象（计算分值）
 var maxlevel = 30;    //fake最大关卡数
@@ -51,16 +52,16 @@ var musicButton11Ob, musicButton12Ob, musicButton13Ob, musicButton21Ob, musicBut
 var startButton = [], gameButton = [], calButton = [], musicButton = [];
 var Button33Y = [], Button54Y = [], Button53Y = [];
 var musicID;  //音乐计时器id
-var ifpause = 0;
-var nowKey = 0;
-var upkey = 1;
-var musicState = 0;
-var resultMusic = [];
-var resource = [];
-var song = 0;
-var helping = 0;
-var HELP = 0;
-var next = 0;
+var ifpause = 0; //是否暂停音乐
+var nowKey = 0;  //音乐模式一中点击的音符
+var upkey = 1;  //升降调
+var musicState = 0;  //音乐模式为一或二
+var resultMusic = [];  //储存一串音符
+var resource = [];   //音频文件数组
+var song = 0;   //音乐模式二中当前播放的音符
+var helping = 0;   //fake模式下是否在讲解界面
+var HELP = 0;  // 开始界面是否点击help按钮
+var next = 0;  //开始界面当前instruction
 
 
 //********************************************************************//定义按钮类****************************
