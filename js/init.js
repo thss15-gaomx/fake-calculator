@@ -50,7 +50,7 @@ cal.initGameButton = function(){
 	gameButton12Ob = new buttonObject(1, 2, 226, 188, 28);
 	gameButton12Ob.init(3, 3);
 	gameButton12Ob.text = ["$","+2","+4","+2","$","/5","x2","+4","1","1","0",
-	"+5","12","1","+6","1","+9","/2","/3","+6","-1","-1","+3","6","x3","-5","+9","10","x3","-9","+6","$"];
+	"-5","12","1","+6","1","+9","/2","/3","+6","-1","-1","+3","6","x3","-5","+9","10","x3","-9","+6","$"];
 	gameButton13Ob = new buttonObject(1, 3, 0, 171, 231);
 	gameButton13Ob.init(3, 3);
 	gameButton13Ob.text[0] = "$";
